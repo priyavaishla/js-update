@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id= "data">
+	</div>
+<script type="text/javascript">
+ var json = {
+data1:{
+	student :[
+{id:1,name:"john",address:{"localAddress":"noidaSec-15","permanentAddress":"newDelhi sec-5"}},
+{id:2,name:"abrahim",address:{"localAddress":"ashokNsgsr","permanentAddress":"meerut sec-2"}},
+{id:3,name:"jacklin",address:{"localAddress":"gurgao","permanentAddress":"up baghpat"}},
+{id:4,name:"katrin",address:{"localAddress":"banglor","permanentAddress":"dehradun"}},
+],
+
+}
+}
+var div=document.createElement("div");
+div.setAttribute("id","div1");
+document.body.appendChild(div);
+var table=document.createElement("table");
+table.setAttribute("border","1");
+var tr=document.createElement("tr");
+for(key in json.data1.student[0])
+{
+	var th=document.createElement("th");
+	th.innerHTML=key;
+	tr.appendChild(th);
+	//alert(key);	
+	//for()
+}
+table.appendChild(tr);
+document.getElementById('div1').appendChild(table);
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<head>
+<body>
+
+<div id="myradio"></div>
+<div id="popup"></div>    
+
+<script>
+var arr1=[
+    {"CountryName":"Australia","CapitalName":"Canberra","CountryCode":"AU","ContinentName":"Australia"},          {"CountryName":"Brazil","CapitalName":"Brasilia","CountryCode":"BR","ContinentName":"South America"},{"CountryName":"Canada","CapitalName":"Ottawa","CountryCode":"CA","ContinentName":"Central America"},{"CountryName":"Denmark","CapitalName":"Copenhagen","CountryCode":"DK","ContinentName":"Europe"},{"CountryName":"Egypt","CapitalName":"Cairo","CountryCode":"EG","ContinentName":"Africa"},{"CountryName":"France","CapitalName":"Paris","CountryCode":"FR","ContinentName":"Europe"},{"CountryName":"Germany","CapitalName":"Berlin","CountryCode":"DE","ContinentName":"Europe"},{"CountryName":"Hungary","CapitalName":"Budapest","CountryCode":"HU","ContinentName":"Europe"},{"CountryName":"India","CapitalName":"Delhi","CountryCode":"IN","ContinentName":"Asia"}];
+     
+    var table = document.createElement("table");
+    table.setAttribute("border",2);
+    
+    
+    
+    for(var x in arr1)
+        {
+            var tr =document.createElement("tr");
+                        
+            for(var y in arr1[x])
+                {
+                   // alert(y);
+                   var th=document.createElement("th");
+                   th.setAttribute("style","text-align:center;font-size:21px;font-weight:bold;");
+                   th.innerHTML=y;
+                   tr.appendChild(th);
+                      
+                }
+             
+        }
+    table.appendChild(tr);
+    
+    
+   	for(var i in arr1)
+	{
+         var tr = document.createElement("tr");
+        for(var j in arr1[i])
+            {
+        //alert(j);
+        //console.log(arr1[i][j]);
+       
+        var td = document.createElement("td");
+   	    var input=document.createElement("input");
+        input.setAttribute("type","radio");
+        input.setAttribute("id",i);
+        //input.setAttribute("value",i+" ::value");
+        input.setAttribute("value",arr1[i][j]);
+        input.setAttribute("name","btnRadio");
+        input.setAttribute("onclick","abc(value)");
+        
+       
+        
+        
+   
+         input.innerHTML+=arr1[i][j];               
+         td.appendChild(input);
+         tr.appendChild(td);
+        
+                
+             var td = document.createElement("td");
+             td.setAttribute("style","text-align:center;font-size:21px;");
+             td.innerHTML+=arr1[i][j]; 
+             tr.appendChild(td);
+        }
+         function abc(value)
+           {
+            alert(value);
+           }
+        
+        table.appendChild(tr);
+       document.getElementById('myradio').appendChild(table);
+               
+       }
+    
+ </script>
+
+</body>
+</html>

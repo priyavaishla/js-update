@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="tst"></p>
+	<script type="text/javascript">
+	var radiobutton;
+		for(var i=0;i<=4;i++)
+		{
+		if(i==0){
+		radiobutton ="<input type='radio' value='qw' onclick='abc(this)' name='myRadio' id='" +i+ "'>";
+		}else{
+		 radiobutton +="<input type='radio' value='zx' onclick='abc(this)' name='myRadio' value='"+i+"'>";
+		 }
+	}
+	
+	//alert(radiobutton);
+	document.getElementById("tst").innerHTML=radiobutton;
+	function abc(ra)
+	{
+		alert(ra.value);
+	}
+	</script>
+
+</body>
+</html>
